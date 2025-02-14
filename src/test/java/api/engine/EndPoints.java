@@ -9,10 +9,10 @@ import static io.restassured.RestAssured.*;
 
 public class EndPoints {
 
-    private static final String BASE_URL = "https://jsonplaceholder.typicode.com";
-    private static JsonObject request = new JsonObject();
+    private static final String BASE_URL = "https://jsonplaceholder.typicode.com"; //Setting the base url for all API calls
+    private static JsonObject request = new JsonObject(); //Creating a JsonObject for use when using POST, PUT & PATCH HTTP methods
 
-    public static JsonObject setJsonObject(int userId, int id, String title, String body) {
+    public static JsonObject setJsonObject(int userId, int id, String title, String body) { //Using the JsonObject, properties are set
         request.addProperty("userId", userId);
         request.addProperty("id", id);
         request.addProperty("title", title);
@@ -20,7 +20,7 @@ public class EndPoints {
         return request;
     }
 
-    public static RequestSpecification setRequestHeader() {
+    public static RequestSpecification setRequestHeader() { //Setting the header, content type and accept characteristics
         baseURI = BASE_URL;
         RequestSpecification request = given();
         request.header("Content-Type", "application/json").
@@ -28,6 +28,10 @@ public class EndPoints {
                 accept(request.toString());
         return request;
     }
+
+    /**
+     * From this point onward, the actual functionality of the methods is abstracted to this base class
+     */
 
     public static Response getAllPosts() {
         baseURI = BASE_URL;

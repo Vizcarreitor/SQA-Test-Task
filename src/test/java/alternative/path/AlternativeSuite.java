@@ -5,7 +5,7 @@ import com.google.gson.JsonObject;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
-public class AlternativeSuite {
+public class AlternativeSuite { //Test suite designed for alternative flow tests
 
     private static Response response;
     private static JsonObject customJson;
@@ -34,6 +34,7 @@ public class AlternativeSuite {
         JsonObject request = new JsonObject();
         String userId = null;
         int id = 101;
+        //request properties will be added manually due to the "setJsonObject" not accepting certain data types
         request.addProperty("userId", userId);
         request.addProperty("id", id);
         request.addProperty("title", "Wrong Title");
@@ -50,6 +51,7 @@ public class AlternativeSuite {
         JsonObject request = new JsonObject();
         int userId = 10;
         String id = null;
+        //request properties will be added manually due to the "setJsonObject" not accepting certain data types
         request.addProperty("userId", userId);
         request.addProperty("id", id);
         request.addProperty("title", "Wrong Title");
@@ -67,6 +69,7 @@ public class AlternativeSuite {
         int userId = 10;
         int id = 101;
         String title = null;
+        //request properties will be added manually due to the "setJsonObject" not accepting certain data types
         request.addProperty("userId", userId);
         request.addProperty("id", id);
         request.addProperty("title", title);
@@ -84,6 +87,7 @@ public class AlternativeSuite {
         int userId = 10;
         int id = 101;
         String body = null;
+        //request properties will be added manually due to the "setJsonObject" not accepting certain data types
         request.addProperty("userId", userId);
         request.addProperty("id", id);
         request.addProperty("title", "Wrong Title");
@@ -104,6 +108,7 @@ public class AlternativeSuite {
         JsonObject request = new JsonObject();
         int userId = 8;
         int id = 102;
+        //request properties will be added manually due to the "setJsonObject" not accepting certain data types
         String title = "The War of the Worlds";
         String body = "The War of the Worlds is a science fiction novel by English author H. G. Wells.";
         int putId = 101;

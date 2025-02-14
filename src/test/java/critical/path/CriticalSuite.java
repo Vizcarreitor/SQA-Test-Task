@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.*;
 
-public class CriticalSuite {
+public class CriticalSuite { //Test suite designed for critical flow tests
 
     private static Response response;
     private static JsonObject customJson;
